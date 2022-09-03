@@ -44,22 +44,32 @@
       <!-- show all category name -->
       <section id="news-category-container" class="d-flex justify-content-between  flex-wrap mb-4">
       </section>
-      <!-- show all category name end -->
       
       <!-- category item -->
       <section  class="bg-light p-4 rounded mb-4 ">
         <h5 class="d-inline-block" id="total-news">0 items found</h5>
         <h5 class="d-inline-block" id="categoryName">Breaking News</h5>
       </section>
-      <!-- category item end-->
 
-      
+  
       <!-- 404: error when no news found-->
       <section id="no-found-news">
         <h3 class="text-center text-secondary">404: No News Found</h3>
       </section>
 
+      <!-- spinner -->
+      <section>
+        <div id="spinner" class="d-flex justify-content-center align-items-center d-none" style="height: 200px;">
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+      </section>
 
+      <!-- news details -->
+      <section>
+        <div id="news-details"></div>
+      </section>
     </main>
     <script src="./js/news.js"></script>
   </body>
