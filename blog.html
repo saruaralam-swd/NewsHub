@@ -28,6 +28,7 @@
 										<h3>Var</h3>
 										<p>1. var is a global and function scope</p>
 										<p>2. Can be <b>redeclared</b> and <b>reassigned</b> with the var keyword</p>
+										<p>3. You can use the variable before it is declared.</p>
 									</div>
 								</div>
 								<div class="col-4 border">
@@ -35,6 +36,7 @@
 										<h3>Let</h3>
 										<p>1. let is block scope</p>
 										<p>2. cannot be <b>redeclared</b> with let keyword but can be <b>reassigned</b></p>
+										<p>3. Using a let variable before it is declared will result in a ReferenceError.</p>
 									</div>
 								</div>
 								<div class="col-4 border">
@@ -42,6 +44,7 @@
 										<h3>Const</h3>
 										<p>1. const is block scope</p>
 										<p>2. cannot be <b>redeclared</b> and <b>reassigned</b> with the const keyword</p>
+										<p>3. Using a Const variable before it is declared will result in a ReferenceError.</p>
 									</div>
 								</div>
 							</div>
@@ -57,7 +60,24 @@
 					</h2>
 					<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
-							<strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+							<div class="row">
+								<div class="col-6 border">
+									<div>
+										<h4>Arrow Function </h4>
+										<li>In regular function, you have to use return keyword to return any value. If you don’t return anything then the function will return undefined.</>
+										<li>In regular function, Arguments keywords can be used to access the arguments of which passed to function.</li>
+										<li>Regular functions are constructible, they can be called using the new keyword.</li>
+									</div>
+								</div>
+								<div class="col-6 border">
+									<div>
+										<h4>Arrow Function </h4>
+										<li>Arrow functions behave in the same way when returning values</li>
+										<li>Arrow functions do not have an arguments binding.</li>
+										<li>arrow functions can never be used as constructor functions. Hence, they can never be invoked with the new keyword</li>
+									</div>
+								</div>
+							</div>							
 						</div>
 					</div>
 				</div>
@@ -70,7 +90,22 @@
 					</h2>
 					<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
-							answer
+							<div class="rounded">
+								<h5 class="text-danger">#forEach()</h5>
+								<li>.forEach(), is used to execute the same code on every element in an array but does not change the array and it returns undefined.</li>
+							</div>
+							<div class="rounded">
+								<h5 class="text-danger">#filter()</h5>
+								<li>.filter() checks every element in an array to see if it meets a certain criteria and returns a new array with the elements that return truthy for the criteria.</li>
+							</div>
+							<div class="rounded">
+								<h5 class="text-danger">map()</h5>
+								<li>.map() executes the same code on every element in an array and returns a new array with the updated elements</li>
+							</div>
+							<div class="rounded">
+								<h5 class="text-danger">reduce()</h5>
+								<li>reduce() works it reduces the array into one single value and returns it upon completion.</li>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -83,7 +118,9 @@
 					</h2>
 					<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
 						<div class="accordion-body">
-							<p>Arrow Function, Syntax Easy than Regular Function</p>
+							<div>
+								<p>Template literals provide an easy way to interpolate variables and expressions into strings.  using backticks makes it easier for string operations. can be multiline code and interpolation is possible. Data can be use dynamically</p>
+							</div>
 						</div>
 					</div>
 				</div>
