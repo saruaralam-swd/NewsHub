@@ -10,14 +10,13 @@ newsCategoryLoad = async () => {
   }
 }
 
-
 displayNewsCategory = (allNewsHeadLine) => {
   const newsCategory = document.getElementById('news-category-container');
   allNewsHeadLine.forEach(news => {
     const div = document.createElement('div');
     div.classList.add('me-3');
     div.innerHTML = `
-      <a onclick="loadDetails('${news.category_id}')" class="category-name d-block text-black" href="#">${news.category_name}</a>
+      <a onclick="loadDetails('${news.category_id}')" class="category-name d-block text-white nav-link" href="#">${news.category_name}</a>
     `;
     newsCategory.appendChild(div);
   });
@@ -68,7 +67,7 @@ displayNewsDetails = (allNewsCategory) => {
     div.classList.add('mb-4');
     div.innerHTML = `
     <div class="row">
-      <div class="col-md-4"> <img src="${news.image_url}" class="img-fluid rounded-start" alt="img-here"> </div>
+      <div class="col-md-4"> <img src="${news.image_url}" class="img-fluid rounded-start h-100" alt="img-here"> </div>
       
       <div class="col-md-8">
         <div class="card-body">
@@ -92,7 +91,7 @@ displayNewsDetails = (allNewsCategory) => {
             </div>
             <div id="staticBackdrop" class="col">
               <div> 
-                <button onclick="showNewsDetails('${news._id}')" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showModal">see more <i class="fa-solid fa-angles-right"></i></button>
+                <button onclick="showNewsDetails('${news._id}')" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showModal"><i class="fa-solid fa-angles-right"></i></button>
               </div>
             </div>
           </div>
