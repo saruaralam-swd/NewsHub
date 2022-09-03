@@ -54,10 +54,9 @@ displayNewsDetails = (allNewsCategory) => {
   }
 
   const newsFound = document.getElementById('total-news');
-  newsFound.innerText = `
-    ${allNewsCategory.length ? allNewsCategory.length : "0"} items found
-  `;
-
+  newsFound.innerText = ` ${allNewsCategory.length ? allNewsCategory.length : "0"} items found from category`;
+  
+  // news sort: hight to low
   allNewsCategory.sort((a, b) => b.total_view - a.total_view);
 
   allNewsCategory.forEach(news => {
@@ -92,7 +91,7 @@ displayNewsDetails = (allNewsCategory) => {
             </div>
             <div id="staticBackdrop" class="col">
               <div> 
-                <button onclick="showNewsDetails('${news._id}')" href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#showModal"><i class="fa-solid fa-angles-right"></i></button>
+                <button onclick="showNewsDetailsInModal('${news._id}')" href="#" class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#showModal"> more <i class="fa-solid fa-angles-right"></i></button>
               </div>
             </div>
           </div>
@@ -100,19 +99,19 @@ displayNewsDetails = (allNewsCategory) => {
       </div>
     </div>
     `;
-
     newsDetailsContainer.appendChild(div);
     spinner(false);
   });
 }
 
-// modal
-showNewsDetails = (id) => {
+// Display modal
+showNewsDetailsInModal = (id) => {
   fetch(`https://openapi.programming-hero.com/api/news/${id}`)
     .then(res => res.json())
     .then(data => displayDetails(data.data[0]))
     .catch(error => console.log(error))
 }
+
 
 displayDetails = (news) => {
   document.getElementById('staticBackdropLabel').innerText = news.title;
