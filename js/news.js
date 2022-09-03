@@ -125,3 +125,17 @@ displayDetails = (news) => {
   `;
 }
 
+// spinner
+spinner = (isLoading) => {
+  const spinner = document.getElementById('spinner');
+  if (isLoading === true) {
+    spinner.classList.remove('d-none');
+  }
+  else {
+    spinner.classList.add('d-none');
+  }
+}
+
+
+loadDetails("01")
+newsCategoryLoad();
