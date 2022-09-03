@@ -1,4 +1,3 @@
-// load newsCategory Name
 newsCategoryLoad = () => {
   fetch(`https://openapi.programming-hero.com/api/news/categories`)
     .then(res => res.json())
@@ -8,7 +7,6 @@ newsCategoryLoad = () => {
 
 displayNewsCategory = (allNewsHeadLine) => {
   const newsCategory = document.getElementById('news-category-container');
-
   allNewsHeadLine.forEach(news => {
     const div = document.createElement('div');
     div.classList.add('me-3');
@@ -19,7 +17,6 @@ displayNewsCategory = (allNewsHeadLine) => {
   });
 
   const categoryName = document.getElementsByClassName('category-name');
-
   for (const name of categoryName) {
     name.addEventListener('click', () => {
       console.log(name.innerText);
