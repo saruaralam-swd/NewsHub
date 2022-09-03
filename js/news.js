@@ -1,9 +1,15 @@
-newsCategoryLoad = () => {
-  fetch(`https://openapi.programming-hero.com/api/news/categories`)
-    .then(res => res.json())
-    .then(data => displayNewsCategory(data.data.news_category))
-    .catch(error => console.log(error));
+/* load news category name */
+newsCategoryLoad = async () => {
+  try {
+    const res = await fetch(`https://openapi.programming-hero.com/api/news/categories`);
+    const data = await res.json();
+    displayNewsCategory(data.data.news_category);
+  } 
+  catch (error) {
+    console.log(error);
+  }
 }
+
 
 displayNewsCategory = (allNewsHeadLine) => {
   const newsCategory = document.getElementById('news-category-container');
@@ -19,7 +25,6 @@ displayNewsCategory = (allNewsHeadLine) => {
   const categoryName = document.getElementsByClassName('category-name');
   for (const name of categoryName) {
     name.addEventListener('click', () => {
-      console.log(name.innerText);
       document.getElementById('categoryName').innerText = name.innerText;
     });
   }
