@@ -1,24 +1,24 @@
 /* load news category name */
-newsCategoryLoad = async () => {
+loadCategoryName = async () => {
   try {
     const res = await fetch(`https://openapi.programming-hero.com/api/news/categories`);
     const data = await res.json();
-    displayNewsCategory(data.data.news_category);
+    displayNewsCategoryName(data.data.news_category);
   } 
   catch (error) {
     console.log(error);
   }
 }
 
-displayNewsCategory = (allNewsHeadLine) => {
-  const newsCategory = document.getElementById('news-category-container');
+displayNewsCategoryName = (allNewsHeadLine) => {
+  const newsCategoryContainer = document.getElementById('news-category-container');
   allNewsHeadLine.forEach(news => {
     const div = document.createElement('div');
     div.classList.add('me-3');
     div.innerHTML = `
       <a onclick="loadDetails('${news.category_id}')" class="category-name d-block text-white nav-link" href="#">${news.category_name}</a>
     `;
-    newsCategory.appendChild(div);
+    newsCategoryContainer.appendChild(div);
   });
 
   const categoryName = document.getElementsByClassName('category-name');
@@ -29,6 +29,7 @@ displayNewsCategory = (allNewsHeadLine) => {
   }
 }
 
+/* load news Details news */
 loadDetails = (id) => {
   spinner(true);
   const url = `https://openapi.programming-hero.com/api/news/category/${id}`
@@ -137,4 +138,4 @@ spinner = (isLoading) => {
 }
 
 loadDetails("01")
-newsCategoryLoad();
+loadCategoryName();
