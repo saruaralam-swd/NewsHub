@@ -103,3 +103,25 @@ displayNewsDetails = (allNewsCategory) => {
     spinner(false);
   });
 }
+
+// modal
+showNewsDetails = (id) => {
+  fetch(`https://openapi.programming-hero.com/api/news/${id}`)
+    .then(res => res.json())
+    .then(data => displayDetails(data.data[0]))
+    .catch(error => console.log(error))
+}
+
+displayDetails = (news) => {
+  const details = ((news.details).slice(0, 200));
+  document.getElementById('staticBackdropLabel').innerText = news.title;
+  const newsDetailsContainer = document.getElementById('newsDetails')
+  newsDetailsContainer.innerHTML = `
+  <img class="img-fluid"  src="${news.image_url}" />
+  <h6 class="mt-3">Author Name: ${news.author.name}</h6>
+  <p class="mt-3">Publish Data: ${news.author.published_date}</p>
+  <p class="mt-3">Total view: ${news.total_view}M</p>
+  <p class="mt-3">${details}</p>
+  `;
+}
+
