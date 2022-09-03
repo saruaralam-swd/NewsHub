@@ -113,7 +113,6 @@ showNewsDetails = (id) => {
 }
 
 displayDetails = (news) => {
-  const details = ((news.details).slice(0, 200));
   document.getElementById('staticBackdropLabel').innerText = news.title;
   const newsDetailsContainer = document.getElementById('newsDetails')
   newsDetailsContainer.innerHTML = `
@@ -121,7 +120,7 @@ displayDetails = (news) => {
   <h6 class="mt-3">Author Name: ${news.author.name}</h6>
   <p class="mt-3">Publish Data: ${news.author.published_date}</p>
   <p class="mt-3">Total view: ${news.total_view}M</p>
-  <p class="mt-3">${details}</p>
+  <p class="mt-3">${news.details}</p>
   `;
 }
 
@@ -135,7 +134,6 @@ spinner = (isLoading) => {
     spinner.classList.add('d-none');
   }
 }
-
 
 loadDetails("01")
 newsCategoryLoad();
