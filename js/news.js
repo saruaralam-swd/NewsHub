@@ -115,12 +115,12 @@ showNewsDetailsInModal = (id) => {
 
 displayDetails = (news) => {
   document.getElementById('staticBackdropLabel').innerText = news.title;
-  const newsDetailsContainer = document.getElementById('newsDetails')
+  const newsDetailsContainer = document.getElementById('newsDetails');
   newsDetailsContainer.innerHTML = `
   <img class="img-fluid"  src="${news.image_url}" />
-  <h6 class="mt-3">Author Name: ${news.author.name}</h6>
-  <p class="mt-3">Publish Data: ${news.author.published_date}</p>
-  <p class="mt-3">Total view: ${news.total_view}M</p>
+  <h6 class="mt-3">Author Name: ${news.author.name ? news.author.name : "name not found"}</h6>
+  <p class="mt-3">Publish Data: ${news.author.published_date ? news.author.published_date : "no date found"}</p>
+  <p class="mt-3">Total view: ${news.total_view ? news.total_view : "No view data found"}M</p>
   <p class="mt-3">${news.details}</p>
   `;
 }
